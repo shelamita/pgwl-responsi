@@ -6,6 +6,7 @@ use App\Models\PointsModel;
 use Illuminate\Http\Request;
 use App\Models\PolygonsModel;
 use App\Models\PolylinesModel;
+use Illuminate\Routing\Controller;
 
 class ApiController extends Controller
 {

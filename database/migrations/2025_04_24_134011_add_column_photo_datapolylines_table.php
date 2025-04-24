@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('points', function (Blueprint $table) {
-            $table->id();
-            $table->geometry('geom');
-            $table->string('name');
-            $table->text('description');
-            $table->timestamps();
+        Schema::table('polylines', function (Blueprint $table) {
+            $table->string('photo')->nullable();
         });
     }
 
@@ -25,6 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('points');
+        //
     }
 };
