@@ -236,6 +236,9 @@
         var point = L.geoJson(null, {
 				onEachFeature: function (feature, layer) {
 
+                    var routeedit = "{{ route('points.edit', ':id') }}";
+                        routeedit = routeedit.replace(':id', feature.properties.id);
+
                     var routeDelete = "{{ route('points.destroy', ':id') }}";
                         routeDelete = routeDelete.replace(':id', feature.properties.id);
 
@@ -243,9 +246,16 @@
 						"Deskripsi: " + feature.properties.description + "<br>" +
                         "Dibuat pada: " + feature.properties.created_at + "<br>" +
                         "<img src='{{ asset('storage/images') }}/" + feature.properties.image + "' width='200' alt=''>" + "<br>" +
+                        "<div class='row mt-4'>" +
+                            "<div class='col-6 text-end'>" +
+                            "<a href='" + routeedit + "' class='btn btn-warning btn-sm'><i class='fa-solid fa-pen-to-square'></i></a>" +
+                            "</div>" +
+                            "<div class='col-6'>" +
                         "<form method='POST' action='" + routeDelete + "'>" +
                             '@csrf' + '@method("DELETE")' +
-                            "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`Are you sure?`)'><i class='fa-solid fa-trash-can'></i></button>" + "</form>"
+                            "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`Are you sure?`)'><i class='fa-solid fa-trash-can'></i></button>" + "</form>" +
+                            "</div>" +
+                        "</div>"
                         ;
 
                     // Contoh penulisan lain
@@ -274,6 +284,9 @@
         var polyline = L.geoJson(null, {
 				onEachFeature: function (feature, layer) {
 
+                    var routeedit = "{{ route('polylines.edit', ':id') }}";
+                        routeedit = routeedit.replace(':id', feature.properties.id);
+
                     var routeDelete = "{{ route('polylines.destroy', ':id') }}";
                         routeDelete = routeDelete.replace(':id', feature.properties.id);
 
@@ -282,9 +295,16 @@
                         "Panjang: " + feature.properties.length_km.toFixed(2) + " km<br>" +
                         "Dibuat pada: " + feature.properties.created_at + "<br>" +
                         "<img src='{{ asset('storage/images') }}/" + feature.properties.image + "' width='200' alt=''>" + "<br>" +
+                        "<div class='row mt-4'>" +
+                            "<div class='col-6 text-end'>" +
+                            "<a href='" + routeedit + "' class='btn btn-warning btn-sm'><i class='fa-solid fa-pen-to-square'></i></a>" +
+                            "</div>" +
+                            "<div class='col-6'>" +
                         "<form method='POST' action='" + routeDelete + "'>" +
                             '@csrf' + '@method("DELETE")' +
                             "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`Are you sure?`)'><i class='fa-solid fa-trash-can'></i></button>" + "</form>"
+                            "</div>" +
+                        "</div>"
                         ;
 
 					layer.on({
@@ -306,6 +326,9 @@
         var polygon = L.geoJson(null, {
 				onEachFeature: function (feature, layer) {
 
+                    var routeedit = "{{ route('polygons.edit', ':id') }}";
+                        routeedit = routeedit.replace(':id', feature.properties.id);
+
                     var routeDelete = "{{ route('polygons.destroy', ':id') }}";
                         routeDelete = routeDelete.replace(':id', feature.properties.id);
 
@@ -314,10 +337,17 @@
                         "Luas: " + feature.properties.area_km2.toFixed(2) + " km<sup>2</sup>" + "<br>" +
                         "Dibuat pada: " + feature.properties.created_at + "<br>" +
                         "<img src='{{ asset('storage/images') }}/" + feature.properties.image + "' width='200' alt=''>" + "<br>" +
-                        "<form method='POST' action='" + routeDelete + "'>" +
+                        "<div class='row mt-4'>" +
+                            "<div class='col-6 text-end'>" +
+                            "<a href='" + routeedit + "' class='btn btn-warning btn-sm'><i class='fa-solid fa-pen-to-square'></i></a>" +
+                            "</div>" +
+                            "<div class='col-6'>" +
+                            "<form method='POST' action='" + routeDelete + "'>" +
                             '@csrf' + '@method("DELETE")' +
                             "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`Are you sure?`)'><i class='fa-solid fa-trash-can'></i></button>" + "</form>"
-                        ;
+                            "</div>" +
+                        "</div>"
+                            ;
 
 					layer.on({
 						click: function (e) {
@@ -333,5 +363,17 @@
 				polygon.addData(data);
 				map.addLayer(polygon);
 			});
+
+        // Layer control
+        var overlayMaps = {
+            "Points": point,
+            "Polylines": polyline,
+            "Polygons": polygon
+        };
+
+        L.control.layers(null, overlayMaps, {
+            collapsed: false
+        }).addTo(map);
+
     </script>
 @endsection
