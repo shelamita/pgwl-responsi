@@ -255,7 +255,7 @@
                             '@csrf' + '@method("DELETE")' +
                             "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`Are you sure?`)'><i class='fa-solid fa-trash-can'></i></button>" + "</form>" +
                             "</div>" +
-                        "</div>"
+                        "</div>" + "<br>" + "<p>Dibuat Oleh: " + feature.properties.user_created + "</p>"
                         ;
 
                     // Contoh penulisan lain
@@ -302,9 +302,9 @@
                             "<div class='col-6'>" +
                         "<form method='POST' action='" + routeDelete + "'>" +
                             '@csrf' + '@method("DELETE")' +
-                            "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`Are you sure?`)'><i class='fa-solid fa-trash-can'></i></button>" + "</form>"
+                            "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`Are you sure?`)'><i class='fa-solid fa-trash-can'></i></button>" + "</form>" +
                             "</div>" +
-                        "</div>"
+                        "</div>" + "<br>" + "<p>Dibuat Oleh: " + feature.properties.user_created + "</p>"
                         ;
 
 					layer.on({
@@ -344,9 +344,9 @@
                             "<div class='col-6'>" +
                             "<form method='POST' action='" + routeDelete + "'>" +
                             '@csrf' + '@method("DELETE")' +
-                            "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`Are you sure?`)'><i class='fa-solid fa-trash-can'></i></button>" + "</form>"
+                            "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`Are you sure?`)'><i class='fa-solid fa-trash-can'></i></button>" + "</form>" +
                             "</div>" +
-                        "</div>"
+                        "</div>" + "<br>" + "<p>Dibuat Oleh: " + feature.properties.user_created + "</p>"
                             ;
 
 					layer.on({
