@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MapController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\PointsController;
+use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PolygonsController;
 use App\Http\Controllers\PolylinesController;
@@ -13,6 +14,18 @@ Route::get('/', [PublicController::class, 'index'])->name('home');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/tentang', function () {
+    return view('about', ['title' => 'Tentang Kami']);
+})->name('about');
+
+Route::get('/gallery', function () {
+    return view('gallery', ['title' => 'Galeri']);
+})->name('gallery');
+
+Route::get('/rekomendasi', function () {
+    return view('rekomendasi', ['title' => 'Rekomendasi']);
+})->name('rekomendasi');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -27,4 +40,4 @@ Route::resource('polygons', PolygonsController::class);
 Route::get('/map', [PointsController::class, 'index'])->middleware(['auth', 'verified'])->name('map');
 Route::get('/table', [TableController::class, 'index'])->name('table');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
