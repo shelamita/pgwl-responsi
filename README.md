@@ -1,21 +1,46 @@
-<<<<<<< HEAD
-# **SAVANA RAYA**
+# 🌿 Savana Raya - Sistem Informasi Geospasial Pariwisata Lombok
 
-<p align="center">
-  <a href="https://laravel.com" target="_blank">
-    <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
-  </a>
-</p>
+**Savana Raya** adalah platform edukatif berbasis web yang menyajikan informasi spasial mengenai destinasi wisata di Pulau Lombok. Aplikasi ini dirancang untuk membantu pengguna mengeksplorasi lokasi wisata berdasarkan titik koordinat, area wisata, rute perjalanan, serta informasi atribut pendukung lainnya.
 
-## **Tentang Proyek Ini**
-SAVANA RAYA adalah proyek berbasis **Laravel** yang dikembangkan untuk kebutuhan tertentu.  
-Framework Laravel dipilih karena kemudahannya dalam membangun aplikasi web dengan cepat dan efisien.
+---
 
-## **Fitur Utama**  
-✅ Menggunakan Laravel sebagai backend.  
-✅ Sistem manajemen data menggunakan database.  
-✅ Routing yang fleksibel dan mudah dikonfigurasi.  
-✅ Template Blade untuk tampilan dinamis.  
+## 🔥 Keunggulan Proyek
+
+- Menyajikan data spasial interaktif berbasis peta (Leaflet.js).
+- Dilengkapi fitur popup, geolocation, digitasi/menambahkan data pariwisata titik area dan rute perjalanan wisata, filter, dan tampilan data tabular.
+- Memberikan rute rekomendasi wisata berdasarkan wilayah geografis (Lombok Timur, Lombok Tengah, Lombok Barat, Lombok Utara, dan Mataram).
+- Tampilan user-friendly dengan tema hijau alami.
+- Akses data terbuka dari Ina-Geoportal, BPS, dan sumber open data lainnya.
+
+---
+
+## 🧩 Fitur yang Disediakan
+
+- 🌍 **Peta Interaktif**: Menampilkan data point, polyline, dan polygon lokasi wisata.
+- 📊 **Tabel Data Wisata**: Menyediakan informasi detail dalam format tabel yang dapat diurutkan dan dicari menjadikannya lebih interaktif dan fleksibel.
+- 🧭 **Rute Perjalanan**: Menampilkan rekomendasi perjalanan dari Bandara ke beberapa destinasi wisata menurut Kabupaten/Kota di Pulau Lombok.
+- 📷 **Galeri Wisata & Rekomendasi Wisata**: Kumpulan foto dari berbagai destinasi populer dan rekomendasi wisata menurut Savana Raya.
+- 🔐 **Autentikasi Pengguna**: Login untuk akses fitur data (hanya admin).
+- 📁 **API Terbuka**: Endpoint data spasial dapat diakses dalam format GeoJSON.
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+- **Laravel** (Backend Framework)
+- **Leaflet.js** (Peta Interaktif)
+- **Bootstrap 5** & Tailwind CSS (Tampilan Responsif)
+- **Font Awesome** (Ikon)
+- **PostgreSQL + PostGIS + dBeaver** (Database spasial)
+- **GeoServer** (Web Map Service - WMS)
+- **OpenStreetMap + Esri World Imagery + CartoDB Positron** (Base map)
+
+---
+
+> Dikembangkan dengan semangat eksplorasi dan cinta terhadap keindahan alam Lombok.  
+> Oleh: Shelamita Amanah Wibowo [23/517749/SV/22825]
+
+
 
 ## **Dokumentasi Laravel**  
 Untuk informasi lebih lanjut tentang Laravel, kunjungi [Laravel Docs](https://laravel.com/docs).  
